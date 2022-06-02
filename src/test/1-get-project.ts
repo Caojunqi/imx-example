@@ -42,17 +42,7 @@ log.info(component, env.alchemyApiKey);
         throw new Error(JSON.stringify(error, null, 2));
     }
 
-    log.info(component, `get project with ID[` + PROJECT_id + `]:
-                                            id:${project.id}
-                                            name:${project.name}
-                                            company_name:${project.company_name}
-                                            contact_email:${project.contact_email}
-                                            collection_limit_expires_at:${project.collection_limit_expires_at}
-                                            collection_monthly_limit:${project.collection_monthly_limit}
-                                            collection_remaining:${project.collection_remaining}
-                                            mint_limit_expires_at:${project.mint_limit_expires_at}
-                                            mint_monthly_limit:${project.mint_monthly_limit}
-                                            mint_remaining:${project.mint_remaining}\n`);
+    console.log(JSON.stringify(project, null, 2));
 })().catch(e => {
     log.error(component, e);
     process.exit(1);
